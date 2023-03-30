@@ -4,6 +4,7 @@
 BOT_URL="https://api.telegram.org/bot6154345107:AAEvYHut1RrDTvLlD5uRwRhJQJ6ADWogmis
 /sendMessage"
 
+TELEGRAM_CHAT_ID = '5616652514'
 # Set formatting for the message. Can be either "Markdown" or "HTML"
 PARSE_MODE="Markdown"
 
