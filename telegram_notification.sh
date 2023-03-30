@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Get the token from Travis environment vars and build the bot URL:
 BOT_URL="https://api.telegram.org/bot5616652514:AAGJrfbzOTiai5v8kkHinfPTfnrwiW0fDw4/sendMessage"
@@ -6,6 +6,16 @@ BOT_URL="https://api.telegram.org/bot5616652514:AAGJrfbzOTiai5v8kkHinfPTfnrwiW0f
 TELEGRAM_CHAT_ID="-988599570"
 # Set formatting for the message. Can be either "Markdown" or "HTML"
 PARSE_MODE="Markdown"
+
+MESSAGE="-------------------------------------
+Travis build *${build_status}!*
+\`Repository:  ${TRAVIS_REPO_SLUG}\`
+\`Branch:      ${TRAVIS_BRANCH}\`
+*Commit Msg:*
+${TRAVIS_COMMIT_MESSAGE}
+[Job Log here](${TRAVIS_JOB_WEB_URL})
+--------------------------------------
+"
 
 # Use built-in Travis variables to check if all previous steps passed:
 if [ $TRAVIS_TEST_RESULT -ne 0 ]; then
