@@ -18,14 +18,16 @@ fi
 # Define send message function. parse_mode can be changed to
 # HTML, depending on how you want to format your message:
 send_msg () {
-    curl --request POST \
-  --url https://api.telegram.org/bot5616652514:AAGJrfbzOTiai5v8kkHinfPTfnrwiW0fDw4/sendMessage \
-  --header 'Content-Type: application/json' \
-  --data '{
-	"chat_id":-988599570,
-	"text":"texto",
-	"parse_mode": "Markdown"
-}'
+    # curl --request POST \
+    # --url https://api.telegram.org/bot5616652514:AAGJrfbzOTiai5v8kkHinfPTfnrwiW0fDw4/sendMessage \
+    # --header 'Content-Type: application/json' \
+    # --data '{
+	# "chat_id":-988599570,
+	# "text":"texto",
+	# "parse_mode": "Markdown"
+    # }'
+    curl -s -X POST https://api.telegram.org/bot5616652514:AAGJrfbzOTiai5v8kkHinfPTfnrwiW0fDw4/sendMessage \
+    -F chat_id='-988599570' -F text='test message'
     # curl -s -X POST ${BOT_URL} -d chat_id=$TELEGRAM_CHAT_ID \
     #     -d text="$1" -d parse_mode=${PARSE_MODE}
 }
