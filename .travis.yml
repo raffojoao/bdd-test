@@ -10,10 +10,6 @@ branches:
 only:
   - test-ci
 
-before_script:
-  - ls script
-  - chmod +x ./telegram_notification.sh
-
 script:
   - docker pull michelleamesquita/cucumber-bdd-ci
   - docker run -v $PWD/:/app/report/ michelleamesquita/cucumber-bdd-ci
